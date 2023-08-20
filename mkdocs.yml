@@ -1,4 +1,5 @@
-site_name: obsidian-mkdocs template
+site_name: NotITG Pages
+site_url: "https://som1sezhi.github.io/notitg-pages/"
 
 theme:
     name: 'material'

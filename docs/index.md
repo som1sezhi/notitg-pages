@@ -1,4 +1,4 @@
-# NotITG pages
+# Home
 
 Some pages about doing stuff in NotITG.
 
