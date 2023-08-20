@@ -18,7 +18,7 @@ varying vec2 imageCoord;
   into `texture2D()` directly.
 - `imageCoord`: The image coordinates at this point.
 
-For more info on `textureCoord` vs. `imageCoord`, see [[Texture padding]].
+For more info on `textureCoord` vs. `imageCoord`, see [Texture padding](texture-padding).
 
 ## Uniforms
 
@@ -41,14 +41,14 @@ uniform sampler2D sampler1;
 - `resolution`: The resolution of the screen. Basically equivalent to  `vec2(SCREEN_WIDTH, SCREEN_HEIGHT)`.
 - `textureSize`: The size of the actor's main texture.
 - `imageSize`: The actual size of the image contained within the actor's main texture.
-- `modelMatrix`: See the section on [[#Transformation matrices]].
-- `viewMatrix`: See the section on [[#Transformation matrices]].
-- `projectionMatrix`: See the section on [[#Transformation matrices]].
+- `modelMatrix`: See the section [regarding transformation matrices](#regarding-transformation-matrices).
+- `viewMatrix`: See the section [regarding transformation matrices](#regarding-transformation-matrices).
+- `projectionMatrix`: See the section [regarding transformation matrices](#regarding-transformation-matrices).
 - `textureMatrix`: Matrix that transforms texture coordinates before they are passed to the fragment shader.
 - `sampler0`: The actor's main texture.
-- `sampler1`: The texture loaded in a model's alphamap slot (see [[Spheremaps]]).
+- `sampler1`: The texture loaded in a model's alphamap slot (see [Spheremaps](spheremaps)).
 
-For more info on `textureSize` vs. `imageSize`, see [[Texture padding]].
+For more info on `textureSize` vs. `imageSize`, see [Texture padding](texture-padding).
 
 TODO: investigate `isEnvMap`?
 
@@ -75,7 +75,7 @@ uniform float fNoteBeat;
 - `fNoteBeat`: (arrow and hold shaders only) Which beat the arrow lies on. For
   holds, which beat the hold starts on.
 
-## Transformation matrices
+### Regarding transformation matrices
 
 In most 3D games, vertex coordinates are transformed to a series of coordinate systems in order to determine where the vertices should end up on screen:
 
