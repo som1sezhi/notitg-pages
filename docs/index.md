@@ -1,11 +1,5 @@
-# Obsidian Notes
+# NotITG pages
 
-Publish your public notes with MkDocs
+Some pages about doing stuff in NotITG.
 
-## Hello World!
-
-The `index.md` in the `/docs` folder is the homepage you see here.
-
-The folders in `/docs` appear as the main sections on the navigation bar.
-
-The notes appear as pages within these sections. For example, [[Note 1]] in `Topic 1`
+Currently using Obsidian to make these pages. Is this a good idea? idk lol
