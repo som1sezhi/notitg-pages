@@ -1,7 +1,6 @@
 # Shader variables
 
-
-
+NotITG automatically passes values into some select uniform variable names for use in your shaders. The default vertex shader also passes some select varying variables into the fragment shader. These variables are listed below.
 ## Varyings
 
 ```glsl
@@ -49,7 +48,7 @@ uniform sampler2D sampler1;
 - `sampler0`: The actor's main texture.
 - `sampler1`: The texture loaded in a model's alphamap slot (see [[Spheremaps]]).
 
-For more info on `textureSize` vs. `imageSize, see [[Texture padding]].
+For more info on `textureSize` vs. `imageSize`, see [[Texture padding]].
 
 TODO: investigate `isEnvMap`?
 
