@@ -1,5 +1,5 @@
-# NotITG Pages
+# [NotITG Pages](https://som1sezhi.github.io/notitg-pages)
 
 Some pages about doing stuff in NotITG.
 
-Currently using Obsidian to make these pages. Is this a good idea? idk lol
+Currently using a MkDocs template + Obsidian to create these pages. Is this a good idea? idk lol
