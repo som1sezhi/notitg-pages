@@ -14,10 +14,8 @@ varying vec2 imageCoord;
 - `position`: The position of this point in local space.
 - `normal`: The normal vector at this point, in view space. Not normalized.
 - `color`: The vertex color, often set via `Actor.diffuse()` and friends.
-- `textureCoord`: The texture coordinates at this point. These coordinates are suitable for plugging into `texture2D()` directly.
-- `imageCoord`: The image coordinates at this point.
-
-For more info on `textureCoord` vs. `imageCoord`, see [Texture padding](texture-padding.md).
+- `textureCoord`: The texture coordinates at this point. These coordinates are suitable for plugging into `texture2D()` directly. For more info, see [Texture padding](texture-padding.md).
+- `imageCoord`: The image coordinates at this point. For more info, see [Texture padding](texture-padding).
 
 ## Uniforms
 
@@ -38,16 +36,14 @@ uniform sampler2D sampler1;
 - `time`: The time into the song, in seconds.
 - `beat`: The time into the chart, in beats.
 - `resolution`: The resolution of the screen. You can think of it as `vec2(SCREEN_WIDTH, SCREEN_HEIGHT)`.
-- `textureSize`: The size of the actor's main texture.
-- `imageSize`: The actual size of the image contained within the actor's main texture.
+- `textureSize`: The size of the actor's main texture. For more info, see [Texture padding](texture-padding.md).
+- `imageSize`: The actual size of the image contained within the actor's main texture. For more info, see [Texture padding](texture-padding.md).
 - `modelMatrix`: The actor's model matrix. See the section [regarding transformation matrices](#regarding-transformation-matrices).
 - `viewMatrix`: The actor's view matrix. See the section [regarding transformation matrices](#regarding-transformation-matrices).
 - `projectionMatrix`: The actor's projection matrix. See the section [regarding transformation matrices](#regarding-transformation-matrices).
 - `textureMatrix`: Matrix that transforms texture coordinates before they are passed to the fragment shader.
 - `sampler0`: The actor's main texture.
 - `sampler1`: The texture loaded in a model's alphamap slot.
-
-For more info on `textureSize` vs. `imageSize`, see [Texture padding](texture-padding.md).
 
 TODO: investigate `isEnvMap`?
 
