@@ -64,10 +64,10 @@ uniform float fNoteBeat;
 - `iPlayfield`: The playfield number (0-7 for P1-P8).
 - `isHold`: 1 for holds, 0 for all else.
 - `isReceptor`: 1 for receptors, 0 for all else.
-- `fYOffset`: (arrow shaders only) The y-offset of the arrow along the arrow path,
+- `fYOffset`: *(arrow shaders only)* The y-offset of the arrow along the arrow path,
   in "pixels". Beware that the location of the zero point is affected by mods
   and is not usually located at the receptors.
-- `fNoteBeat`: (arrow and hold shaders only) Which beat the arrow lies on. For
+- `fNoteBeat`: *(arrow and hold shaders only)* Which beat the arrow lies on. For
   holds, which beat the hold starts on.
 
 ### Regarding transformation matrices
