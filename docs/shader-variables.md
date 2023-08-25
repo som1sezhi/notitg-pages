@@ -31,21 +31,21 @@ uniform mat4 projectionMatrix;
 uniform mat4 textureMatrix;
 uniform sampler2D sampler0;
 uniform sampler2D sampler1;
+uniform bool isEnvMap;
 ```
 
 - `time`: The time into the song, in seconds.
 - `beat`: The time into the chart, in beats.
 - `resolution`: The resolution of the screen. You can think of it as `vec2(SCREEN_WIDTH, SCREEN_HEIGHT)`.
-- `textureSize`: The size of the actor's main texture. For more info, see [Texture padding](texture-padding.md).
-- `imageSize`: The actual size of the image contained within the actor's main texture. For more info, see [Texture padding](texture-padding.md).
+- `textureSize`: (*not available in model shaders*) The size of the actor's main texture. For more info, see [Texture padding](texture-padding.md).
+- `imageSize`: (*not available in model shaders*) The actual size of the image contained within the actor's main texture. For more info, see [Texture padding](texture-padding.md).
 - `modelMatrix`: The actor's model matrix. See the section [regarding transformation matrices](#regarding-transformation-matrices).
 - `viewMatrix`: The actor's view matrix. See the section [regarding transformation matrices](#regarding-transformation-matrices).
 - `projectionMatrix`: The actor's projection matrix. See the section [regarding transformation matrices](#regarding-transformation-matrices).
 - `textureMatrix`: Matrix that transforms texture coordinates before they are passed to the fragment shader.
 - `sampler0`: The actor's main texture.
-- `sampler1`: The texture loaded in a model's alphamap slot.
-
-TODO: investigate `isEnvMap`?
+- `sampler1`: (*model shaders only*) The texture loaded in a model's alphamap slot.
+- `isEnvMap`[^1]: (*model shaders only*) True if the textures loaded with the model are sphere maps (?). Specifically, this is true whenever a sphere map is loaded in the color map or alphamap slot, *except* in the case where a sphere map is in the color map slot and a non-sphere-map texture is in the alphamap slot.
 
 ### Additional playfield shader uniforms
 
@@ -93,3 +93,5 @@ The `modelMatrix`, `viewMatrix`, and `projectionMatrix` uniforms that NotITG use
 - `modelMatrix` includes all transformations applied to the actor and its containing ActorFrames (but not any of the FOV-related stuff).
 - If the actor has no FOV applied, `viewMatrix` is just the identity matrix (the transformation does nothing). If FOV is applied, `viewMatrix` translates the x- and y-coordinates by `-resolution / 2.0` (presumably to move the origin point to the center of the screen). It also performs a translation in the negative z direction, pushing the actor further into the depth axis, with the translation becoming more extreme as the FOV decreases (probably to counteract any apparent size changes caused by changing the FOV).
 - `projectionMatrix` seems to work pretty much as expected. Just make sure to name the uniform `projectionMatrix` and NOT `perspectiveMatrix`. Unlike what documentation on the Discord might indicate, NotITG doesn't pass anything into the `perspectiveMatrix` uniform.
+
+[^1]: I've never seen this uniform really documented anywhere, so I'm not sure if this is even officially a "feature". I only managed to find this one by poking around in glIntercept. 
